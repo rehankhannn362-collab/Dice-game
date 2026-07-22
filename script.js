@@ -12,21 +12,29 @@ function switchdice(){
     document.querySelector(".dice1").src=dices[randomP1];
     document.querySelector(".dice2").src=dices[randomP2];
     if(randomP1>randomP2){
-        document.querySelector(".player1").innerHTML="🥳Player 1 Wins🥳";
-        document.querySelector(".player2").innerHTML="💀Player 2 lost💀";    
+        document.querySelector(".player1").innerHTML="🥳"+playername1+" wins 🥳";
+        document.querySelector(".player2").innerHTML="💀"+playername2+" lost 💀";   
     }
     else if(randomP1===randomP2){
         document.querySelector(".player1").innerHTML="⚖️Draw⚖️";    
         document.querySelector(".player2").innerHTML="⚖️Draw⚖️";    
     }
     else{
-        document.querySelector(".player2").innerHTML="🥳Player 2 Wins🥳";
-        document.querySelector(".player1").innerHTML="💀Player 1 lost💀";    
+        document.querySelector(".player2").innerHTML="🥳"+playername2+" wins 🥳";
+        document.querySelector(".player1").innerHTML="💀"+playername1+" lost 💀";    
     }
 }
+var playername1="Player 1";
+var playername2="Player 2";
 function switchnamep1(){
-    document.querySelector(".player1").innerHTML=document.querySelector(".name1").value;
+    if(document.querySelector(".name1").value!==""){
+    playername1=document.querySelector(".name1").value;
+    document.querySelector(".player1").innerHTML=playername1;
+    }
 }
 function switchnamep2(){
-    document.querySelector(".player2").innerHTML=document.querySelector(".name2").value;
+    if(document.querySelector(".name2").value!==""){
+    playername2=document.querySelector(".name2").value;
+    document.querySelector(".player2").innerHTML=playername2;
+    }
 }
